@@ -14,6 +14,10 @@ class Vendor
     inventory[item]
   end
 
+  def items_by_name
+    inventory.map { |item| item[0].name }
+  end
+
   def potential_revenue
     inventory.sum do |item, amt|
       amt * item.price_as_float
